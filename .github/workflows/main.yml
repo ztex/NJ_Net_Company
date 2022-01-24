@@ -1,0 +1,41 @@
+name: CI
+
+on: [issues, issue_comment]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@master
+    - name: install dependencies
+      run: |
+        pip3 install setuptools --user
+        pip3 install PyGithub --user
+        pip3 install openpyxl --user
+        pip3 install pandas --user
+        pip3 install tabulate --user
+        pip3 install gspread --user
+    - name: run python script
+      env:
+        GITHUB_LOGIN: ztex
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: python3 main.py
+    - name: config git info
+      run: |
+        git config --global user.email "uu@gmail.com"
+        git config --global user.name "uu"
+    - name: commit change
+      run: |
+        git checkout main
+        git add .
+        git commit -m "Update from Github Action"
+    - name: push change
+      env:
+        GITHUB_LOGIN: ztex
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git push https://$GITHUB_LOGIN:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git
+    - name: done
+      run: echo 'done'
