@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import os
+import pathlib
 
 from github import Github
 from github.Repository import Repository
@@ -50,8 +51,7 @@ def to_google_doc(company_obj):
 
 def to_tg():
     bot = telegram.Bot("5284719273:AAF9DFMuDQhr1h0lp6Yj4Smj3u_eXtYrtNE")
-    bot.sendDocument(
-        "https://raw.githubusercontent.com/ztex/NJ_Net_Company/main/%E5%8D%97%E4%BA%AC%E4%BA%92%E8%81%94%E7%BD%91%E5%85%AC%E5%8F%B8%E7%BB%9F%E8%AE%A1%E6%B1%87%E6%80%BB.xlsx")
+    bot.send_message(chat_id='-789012721', text="南京互联网公司最新消息:" + "https://raw.githubusercontent.com/ztex/NJ_Net_Company/main/%E5%8D%97%E4%BA%AC%E4%BA%92%E8%81%94%E7%BD%91%E5%85%AC%E5%8F%B8%E7%BB%9F%E8%AE%A1%E6%B1%87%E6%80%BB.xlsx")
 
 
 def execute():
