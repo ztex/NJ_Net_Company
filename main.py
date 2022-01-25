@@ -9,6 +9,7 @@ import pandas as pd
 import gspread
 from google.oauth2.service_account import Credentials
 from gspread import SpreadsheetNotFound, WorksheetNotFound
+import telegram
 
 user: Github
 username: str
@@ -47,6 +48,12 @@ def to_google_doc(company_obj):
     worksheet.update([company_obj.columns.values.tolist()] + company_obj.values.tolist())
 
 
+def to_tg():
+    bot = telegram.Bot("5284719273:AAF9DFMuDQhr1h0lp6Yj4Smj3u_eXtYrtNE")
+    bot.sendDocument(
+        "https://raw.githubusercontent.com/ztex/NJ_Net_Company/main/%E5%8D%97%E4%BA%AC%E4%BA%92%E8%81%94%E7%BD%91%E5%85%AC%E5%8F%B8%E7%BB%9F%E8%AE%A1%E6%B1%87%E6%80%BB.xlsx")
+
+
 def execute():
     issues = repo.get_issues()
     company_list = []
@@ -59,8 +66,9 @@ def execute():
     company_obj = pd.DataFrame(company_list)
     company_obj.sort_values(by="公司名称", ascending=True)
     company_obj.to_excel('南京互联网公司统计汇总.xlsx')
-    company_obj.to_markdown("Readme.md")
+    company_obj.to_markdown("南京互联网公司统计汇总.md")
     to_google_doc(company_obj)
+    to_tg()
 
 
 if __name__ == '__main__':
