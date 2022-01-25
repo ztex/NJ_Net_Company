@@ -7,7 +7,7 @@
 ## 功能
 1. 填写issue自动生成表格到当前仓库
 2. 结果同步google doc
-3. 结果通过telegram bot同步到telegram群组，bot名称 @NJ_Net_Company_bot, 群组名称 [在南京的程序员](https://t.me/+Kwm8tW1UxSZlMzll)
+3. 结果通过telegram bot同步到telegram群组，bot名称 @NJ_Net_Company_bot, 群组名称 [在南京的程序员,点击进群](https://t.me/+Kwm8tW1UxSZlMzll)
 
 ## 如何使用
 
