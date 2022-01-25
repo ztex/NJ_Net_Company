@@ -17,6 +17,8 @@ jobs:
         pip3 install pandas --user
         pip3 install tabulate --user
         pip3 install gspread --user
+        pip3 install python-telegram-bot --user
+
     - name: run python script
       env:
         GITHUB_LOGIN: ztex
