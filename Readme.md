@@ -17,7 +17,7 @@
 3. issue 模板是 json 格式的，只需要填写对应的 value 即可，编辑完成后，直接提交，github ci 会自动生成对应的 markdown 和 excel，最新结果可在本仓库*南京互联网公司统计汇总.md*和*南京互联网公司统计汇总.xlsx*中查看
 
 ### 使用邮箱
-1. 发送邮件至[点击一下，发送邮件](zmyjust@gmail.com) 格式参照：
+1. 发送邮件至<zmyjust@gmail.com>, 格式参照：
 ```json
 {
     "公司名称": "xxx有限公司（或缩写）",
