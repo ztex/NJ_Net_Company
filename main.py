@@ -61,7 +61,7 @@ def execute():
         issue_json = json.loads(issue.body)
         comments = '/'.join(map(lambda x: x.body, issue.get_comments()))
         issue_json['评论'] = comments
-        issue_json['更新时间'] = issue.updated_at.strftime('%Y-%m-%d %H:%M:%S')
+        # issue_json['更新时间'] = issue.updated_at.strftime('%Y-%m-%d %H:%M:%S')
         company_list.append(issue_json)
     company_obj = pd.DataFrame(company_list)
     company_obj.sort_values(by="公司名称", ascending=True)
