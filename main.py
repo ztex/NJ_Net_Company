@@ -67,7 +67,7 @@ def execute():
     company_obj.sort_values(by="公司名称", ascending=True)
     company_obj.to_excel('南京互联网公司统计汇总.xlsx')
     company_obj.to_markdown("南京互联网公司统计汇总.md")
-    to_google_doc(company_obj)
+    # to_google_doc(company_obj)
     to_tg()
 
 
